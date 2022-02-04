@@ -117,5 +117,36 @@ namespace Tracker.DataAccess.TextHelpers
 
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
+
+        public static void SaveToTeamFile(this List<TeamModel> models, string filename)
+        {
+            List<string> lines = new List<string>();
+
+            foreach(TeamModel t in models)
+            {
+                lines.Add($"{t.Id},{t.TeamName},{ConvertPeopleListToString(t.TeamMembers)}");
+            }
+            
+            File.WriteAllLines(filename.FullFilePath(), lines);
+        }
+
+        private static string ConvertPeopleListToString(List<PersonModel> people)
+        {
+            string output = "";
+
+            if (people.Count == 0)
+            {
+                return "";
+            }
+
+            foreach (PersonModel p in people)
+            {
+                output += $"{p.Id}|";
+            }
+
+            output = output.Substring(0, output.Length - 1);
+
+            return output;
+        } 
     }
 }
