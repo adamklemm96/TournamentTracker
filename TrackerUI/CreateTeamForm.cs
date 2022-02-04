@@ -16,8 +16,9 @@ namespace TrackerUI
     {
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
+        ICreateTeamRequester callingform;
 
-        public CreateTeamForm()
+        public CreateTeamForm(ICreateTeamRequester caller)
         {
             InitializeComponent();
 
@@ -25,6 +26,7 @@ namespace TrackerUI
 
             WireUpLists();
 
+            callingform = caller;
         }
 
         private void CreateSampleData()
@@ -137,7 +139,16 @@ namespace TrackerUI
 
             t = GlobalConfig.Connection.CreateTeam(t);
 
+            callingform.TeamComplete(t);
+            this.Close();
+
+
             //TODO - if you dont close this form after creation, reset the form 
+
+        }
+
+        private void selectTeamMemberDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
