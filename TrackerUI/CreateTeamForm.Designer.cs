@@ -103,6 +103,7 @@
             this.selectTeamMemberDropDown.Name = "selectTeamMemberDropDown";
             this.selectTeamMemberDropDown.Size = new System.Drawing.Size(390, 38);
             this.selectTeamMemberDropDown.TabIndex = 15;
+            this.selectTeamMemberDropDown.SelectedIndexChanged += new System.EventHandler(this.selectTeamMemberDropDown_SelectedIndexChanged);
             // 
             // addMemberButton
             // 
