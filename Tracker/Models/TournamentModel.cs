@@ -15,7 +15,6 @@ namespace Tracker.Models
         /// The unique id 
         /// </summary>
         public int Id { get; set; }
-
         /// <summary>
         /// Tournament name 
         /// </summary>
