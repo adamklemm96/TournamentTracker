@@ -137,14 +137,10 @@ namespace TrackerUI
             t.TeamName = teamNameTextBox.Text;
             t.TeamMembers = selectedTeamMembers;
 
-            t = GlobalConfig.Connection.CreateTeam(t);
+            GlobalConfig.Connection.CreateTeam(t);
 
             callingform.TeamComplete(t);
             this.Close();
-
-
-            //TODO - if you dont close this form after creation, reset the form 
-
         }
 
         private void selectTeamMemberDropDown_SelectedIndexChanged(object sender, EventArgs e)
