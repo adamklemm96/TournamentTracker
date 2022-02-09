@@ -99,6 +99,8 @@ namespace Tracker
 
                 SaveTournamentEntries(connection, model);
 
+                SaveTournamentRounds(connection, model);
+
             }
         }
 
@@ -138,6 +140,17 @@ namespace Tracker
             }
         }
 
+        private void SaveTournamentRounds(IDbConnection connection, TournamentModel model)
+        {
+            // List<List<MatchupModel>> Rounds
+            // List<MatchupModel>> Entries 
+
+
+            // Loop through rounds 
+            // Loop through the matchups 
+            // Save the matchup
+            // Loop through the entries and save them 
+        }
 
         public List<PersonModel> GetPerson_All()
         {
