@@ -94,8 +94,6 @@ namespace Tracker.DataAccess
             tournaments.Add(model);
 
             tournaments.SaveToTournamentFile(TeamFile);
-
-            return model;
         }
 
         public List<PersonModel> GetPerson_All()
