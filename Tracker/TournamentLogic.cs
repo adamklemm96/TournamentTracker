@@ -119,9 +119,7 @@ namespace Tracker
 
         private static List<TeamModel> RandomizeTeamOrder(List<TeamModel> teams) 
         { 
-            var shuffleTeams = teams.OrderBy(a => Guid.NewGuid()).ToList();
-
-            return shuffleTeams;
+            return teams.OrderBy(a => Guid.NewGuid()).ToList();
         }
     }
 }
